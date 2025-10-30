@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/MyLib/public/Mylib.png?v=2" />
+    <script type="module" src="/MyLib/components/notification.js"></script>
+    <link rel="stylesheet" href="/MyLib/components/notification.css" />
+
+    <title>Register | MyLib</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #00a8ff, #9c88ff);
+        margin: 0;
+      }
+
+      form {
+        background: white;
+        padding: 30px 40px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        width: 100%;
+        max-width: 400px;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #333;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 500;
+        color: #444;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px 12px;
+        margin-bottom: 18px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        transition: border-color 0.2s ease;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #6c5ce7;
+        box-shadow: 0 0 5px rgba(108, 92, 231, 0.3);
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        background: #6c5ce7;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      button:hover {
+        background: #574b90;
+      }
+
+      p {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 14px;
+      }
+
+      a {
+        color: #6c5ce7;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      id="registerForm"
+      action="http://localhost:5001/MyLIb/register"
+      method="POST"
+    >
+      <h2>Register</h2>
+
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+
+      <button type="submit">Register</button>
+
+      <p>Already have an account? <a href="/MyLib/">Login</a></p>
+    </form>
+
+    <script type="module">
+      import { showNotification } from "/MyLib/components/notification.js";
+      const form = document.getElementById("registerForm");
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        try {
+          const response = await fetch(form.action, {
+            method: form.method,
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ username, name, email, password }),
+          });
+
+          const payload = {
+            username: username,
+          };
+          console.log(payload);
+
+          const result = await response.json();
+          localStorage.setItem("user", JSON.stringify(payload));
+
+          if (response.status === 200) {
+            window.location.href = `http://localhost:5001${result.redirect}`;
+            showNotification({
+            message:"Succes regist",
+            type: "success"
+          });
+          } else {
+            showNotification({
+            message:"Failed to regist",
+            type: "error"
+          });
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          showNotification({
+            message:"something wrong with server",
+            type: "error"
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

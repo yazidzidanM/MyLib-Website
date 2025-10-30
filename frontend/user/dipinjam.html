@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Borrow Book | MyLib</title>
+    <link rel="icon" type="image/png" href="/MyLib/public/Mylib.png" />
+    <link rel="stylesheet" href="/MyLib/styles/dipinjam.css" />
+    <link rel="stylesheet" href="/MyLib/components/confirmModal.css" />
+    <link rel="stylesheet" href="/MyLib/components/notification.css" />
+    <link rel="stylesheet" href="/MyLib/components/sidebar_user.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <div id="sidebar-container"></div>
+
+      <div class="content">
+        <h1>📚 Books On Loan</h1>
+        <div id="book-container" class="book-container">
+          <p>Load Data...</p>
+        </div>
+
+        <h1 style="margin-top: 40px">✅ Book has Returned</h1>
+        <div id="returned-container" class="book-container">
+          <p>Load Data...</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="/MyLib/components/sidebar_user.js"></script>
+    <script type="module" src="/MyLib/components/confirmModal.js"></script>
+    <script type="module" src="/MyLib/javascripts/dipinjam.js"></script>
+    <script type="module" src="/MyLib/components/notification.js"></script>
+  </body>
+</html>

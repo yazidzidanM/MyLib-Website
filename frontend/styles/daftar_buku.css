@@ -1,0 +1,228 @@
+/* ========== GLOBAL RESET & FONT ========== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f8fafc;
+  display: flex;
+}
+
+/* Layout wrapper */
+.layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ========== CONTENT AREA ========== */
+.content {
+  margin-left: 190px;
+  padding: 22px;
+  flex: 1;
+  size: 90%;
+}
+
+.content h1 {
+  color: #1e293b;
+  margin-top: -10px;
+  margin-buttom: -4px;
+}
+
+/* ========== BOOK GRID ========== */
+.book-container {
+  display: grid;
+  margin-top: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(153px, 1fr));
+  gap: 20px;
+}
+
+.book-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.book-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.book-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.book-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.book-info h2 {
+  font-size: 14px;
+  margin: 4px 0;
+  color: #1e293b;
+}
+
+.book-info p {
+  color: #475569;
+  margin: 2px 0;
+  font-size: 12px;
+}
+
+/* ========== BUTTONS ========== */
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  gap: 6px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 13px;
+  flex: 1;
+  transition: 0.2s;
+  margin-buttom: 0;
+}
+
+button.edit {
+  background: #3b82f6;
+  color: white;
+}
+button.edit:hover {
+  background: #2563eb;
+}
+
+button.delete {
+  background: #ef4444;
+  color: white;
+}
+button.delete:hover {
+  background: #dc2626;
+}
+
+/* ========== EDIT FORM ========== */
+.edit-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  width: 400px;
+  max-width: 90%;
+  display: none;
+}
+
+.edit-form.show {
+  display: block;
+}
+
+.edit-form h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.edit-form label {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1e293b;
+}
+
+.edit-form input,
+.edit-form textarea {
+  margin-top: 4px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  width: 100%;
+}
+
+.edit-form textarea {
+  resize: vertical;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button.save {
+  background: #22c55e;
+  color: white;
+}
+button.cancel {
+  background: #ef4444;
+  color: white;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .content {
+    margin-left: 90px;
+    padding: 20px;
+  }
+}
+
+.search-container {
+  background-color: #fff;
+  padding: 4px 6px;
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-container input[type="text"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.search-container button {
+  max-width: 40px;
+  max-height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.search-container button:hover {
+  background-color: #e2e6ea;
+}

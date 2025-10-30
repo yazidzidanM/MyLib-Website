@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f8fafc;
+  display: flex;
+}
+
+.content {
+  margin-left: 210px;
+  padding: 30px;
+  flex: 1;
+}
+
+h1 {
+  color: #1e293b;
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+/* === GRID BUKU === */
+.book-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 🔹 FIX 4 PER BARIS */
+  gap: 20px;
+}
+
+/* === CARD === */
+.book-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* 🔹 lebih pendek & seragam */
+}
+
+.book-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.book-card img {
+  width: 100%;
+  height: 210px; /* 🔹 gambar lebih ramping */
+  object-fit: cover;
+}
+
+/* === INFO === */
+.book-info {
+  padding: 10px 12px;
+}
+
+.book-info h2 {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #1e293b;
+  line-height: 1.3;
+}
+
+.book-info p {
+  font-size: 12px;
+  color: #475569;
+  margin: 2px 0;
+}
+
+/* === STATUS === */
+.status {
+  font-weight: bold;
+  margin-top: 4px;
+  text-transform: capitalize;
+}
+
+.status.dipinjam {
+  color: #2563eb;
+}
+
+.status.dikembalikan {
+  color: #16a34a;
+}
+
+.status.terlambat {
+  color: #dc2626;
+}
+
+/* === BUTTON === */
+.btn-kembalikan {
+  background: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  margin: 8px;
+  align-self: center;
+  transition: background 0.2s;
+}
+
+.btn-kembalikan:hover {
+  background: #0284c7;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1200px) {
+  .book-container {
+    grid-template-columns: repeat(3, 1fr); /* 🔹 tablet landscape */
+  }
+}
+
+@media (max-width: 900px) {
+  .book-container {
+    grid-template-columns: repeat(2, 1fr); /* 🔹 tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .book-container {
+    grid-template-columns: repeat(1, 1fr); /* 🔹 hp */
+  }
+
+  .book-card img {
+    height: 220px;
+  }
+}
+
+.btn-hapus {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+  margin-top: 10px;
+}
+
+.btn-hapus:hover {
+  background: #dc2626;
+}

@@ -1,0 +1,49 @@
+.content {
+  margin-left: 230px;
+  padding: 30px;
+  flex: 1;
+}
+
+h1 {
+  color: #1e293b;
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.intro {
+  font-size: 15px;
+  color: #475569;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card h2 {
+  color: #1e293b;
+  margin-bottom: 8px;
+  font-size: 17px;
+}
+
+.feature-card p {
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.5;
+}

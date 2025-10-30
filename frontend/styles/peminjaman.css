@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f8fafc;
+  display: flex;
+}
+
+.content {
+  margin-left: 190px;
+  padding: 25px;
+  flex: 1;
+}
+
+h1 {
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+/* TABLE STYLING */
+.table-container {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+  background: #f1f5f9;
+  color: #334155;
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: #f8fafc;
+}
+
+.loading {
+  text-align: center;
+  color: #64748b;
+}
+
+/* STATUS LABEL */
+.status {
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.status.dipinjam {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status.dikembalikan {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.terlambat {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .content {
+    margin-left: 85px;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  table {
+    font-size: 12px;
+    min-width: 100%;
+  }
+
+  th, td {
+    padding: 8px 10px;
+  }
+
+  .table-container {
+    padding: 15px;
+    border-radius: 8px;
+  }
+}

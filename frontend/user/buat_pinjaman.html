@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Borrow Book | MyLib</title>
+    <link rel="icon" type="image/png" href="/MyLib/public/Mylib.png?v=2" />
+    <link rel="stylesheet" href="/MyLib/styles/buat_pinjaman.css" />
+    <link rel="stylesheet" href="/MyLib/components/confirmModal.css" />
+    <link rel="stylesheet" href="/MyLib/components/notification.css" />
+    <link rel="stylesheet" href="/MyLib/components/sidebar_user.css" />
+  </head>
+
+  <body>
+    <div id="sidebar-container"></div>
+
+    <div class="content">
+      <h1>📖 Book Loan Form</h1>
+      <p class="subtitle">Isi data di bawah untuk meminjam buku dari MyLib</p>
+
+      <form id="formPeminjaman" class="form-container">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Masukkan nama lengkap"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="username">Username (Otomatic)</label>
+          <input type="text" id="username" readonly />
+        </div>
+
+        <div class="form-group">
+          <label for="book">Choose Boo</label>
+          <select id="book" required>
+            <option value="">-- Choose book --</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="tanggal_pinjaman">Borrow date</label>
+          <input type="date" id="tanggal_pinjaman" readonly />
+        </div>
+
+        <div class="form-group">
+          <label for="deadline">Return Deadline</label>
+          <input type="date" id="deadline" required />
+        </div>
+
+        <div class="buttons">
+          <button type="submit" class="btn-submit">💾 Save Loan</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="/MyLib/components/sidebar_user.js"></script>
+    <script type="module" src="/MyLib/components/confirmModal.js"></script>
+    <script type="module" src="/MyLib/javascripts/buat_pinjaman.js"></script>
+    <script type="module" src="/MyLib/components/notification.js"></script>
+  </body>
+</html>

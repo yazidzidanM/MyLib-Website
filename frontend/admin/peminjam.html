@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Borrowed Data | MyLib</title>
+    <link rel="icon" type="image/png" href="/MyLib/public/Mylib.png?v=2" />
+    <link rel="stylesheet" href="/MyLib/styles/peminjaman.css" />
+    <link rel="stylesheet" href="/MyLib/components/confirmModal.css" />
+    <link rel="stylesheet" href="/MyLib/components/notification.css" />
+    <link rel="stylesheet" href="/MyLib/components/sidebar.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <div id="sidebar-container"></div>
+
+      <div class="content">
+        <h1>📚 Book Loan Data</h1>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Member Name</th>
+                <th>Book Title</th>
+                <th>Borrow Date</th>
+                <th>Return Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="peminjamanTableBody">
+              <tr>
+                <td colspan="6" class="loading">Loading Borrowing Data...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="/MyLib/components/sidebar.js"></script>
+    <script type="module" src="/MyLib/javascripts/global.js"></script>
+    <script type="module" src="/MyLib/components/confirmModal.js"></script>
+    <script type="module" src="/MyLib/javascripts/peminjaman.js"></script>
+    <script type="module" src="/MyLib/components/notification.js"></script>
+
+  </body>
+</html>
