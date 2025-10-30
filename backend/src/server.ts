@@ -36,10 +36,10 @@ async function main() {
     mysqlDB;
     console.log(`MongoDB: ${await mongoDB()}`);
 
-    // app.listen(PORT, () => {
-    //   console.log(`🚀 Server is running on http://localhost:${PORT}`);
-    //   console.log(`📂 Frontend served from: ${frontendPath}`);
-    // });
+    app.listen(PORT, () => {
+      console.log(`🚀 Server is running`);
+      console.log(`📂 Frontend served from: ${frontendPath}`);
+    });
   } catch (error) {
     console.error("❌ Failed to start server:", error);
     if (error instanceof Error) {
