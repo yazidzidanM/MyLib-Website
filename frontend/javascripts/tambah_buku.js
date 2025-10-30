@@ -23,6 +23,7 @@ document.getElementById("pasteCoverUrl").addEventListener("click", async () => {
 document.getElementById("pasteJson").addEventListener("click", async () => {
   try {
     const text = await navigator.clipboard.readText();
+    console.log(text)
     document.getElementById("jsonData").value = text.trim();
   } catch (err) {
     showNotification({
