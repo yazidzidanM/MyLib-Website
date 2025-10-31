@@ -37,7 +37,7 @@ async function main() {
     console.log(`MongoDB: ${await mongoDB()}`);
 
     app.listen(PORT, () => {
-      console.log(`🚀 Server is running`);
+      console.log(`🚀 Server is running on railway`);
       console.log(`📂 Frontend served from: ${frontendPath}`);
     });
   } catch (error) {
